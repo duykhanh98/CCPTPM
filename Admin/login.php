@@ -1,4 +1,29 @@
 
+<?php
+include ('config.php');
+    ob_start();
+    if(isset($_SESSION['dangnhap']))
+    {
+        //echo  'Xin chào '.$_SESSION['dangnhap'];
+        header ('location:index.php');
+    }
+    if (isset($_POST['dangnhap']))
+    {
+        $taikhoan   = $_POST['taikhoan'];
+        $matkhau    = $_POST['matkhau'];
+        $sql="  SELECT * FROM user 
+                WHERE user_name = '$taikhoan' and password = '$matkhau'";
+        $run=mysqli_query($conn, $sql);
+        $dem=mysqli_num_rows($run);
+        if($dem == 0)
+        {
+                echo '<script>alert("Sai tài khoàn hoặc mật khẩu")</script>';
+        }else{
+            $_SESSION['dangnhap']=$taikhoan;
+            header ('location:index.php');
+        }
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,19 +44,22 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">ĐĂNG NHẬP</h3></div>
                                     <div class="card-body">
-                                        <form>
-                                            <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" /></div>
-                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" /></div>
+                                        <form action="" method="post" enctype="multipart/form-data">
+                                            <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Tài khoản</label><input class="form-control py-4" id="inputEmailAddress" type="text" name="taikhoan" placeholder="Nhập tài khoản" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Mật khẩu</label><input name="matkhau" class="form-control py-4" id="inputPassword" type="password" placeholder="Nhập mật khẩu" /></div>
                                             <div class="form-group">
-                                                <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Remember password</label></div>
+                                                <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Nhớ mật khẩu</label></div>
                                             </div>
-                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="password.html">Forgot Password?</a><a class="btn btn-primary" href="index.php">Login</a></div>
+                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="password.html">Quên mật khẩu?</a><button class="btn btn-danger mt-2" type="submit" name="dangnhap">Đăng nhập</button></div>
                                         </form>
+                                         <?php 
+                                            ob_end_flush();
+                                            ?>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="register.html">Tạo tài khoản?!</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -59,3 +87,6 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+
+
+
