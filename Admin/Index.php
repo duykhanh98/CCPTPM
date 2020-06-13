@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>New Shop a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Mua bán quần áo online</title>
 <!--css-->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -80,8 +80,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="top-right">
                     <ul>
                         <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="registered.html"> Create Account </a></li>
+                        <li><a href="login.html">Đăng nhập</a></li>
+                        <li><a href="registered.html">Đăng ký</a></li>
                     </ul>
                     </div>
                     <div class="clearfix"></div>
@@ -106,10 +106,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div> 
                             <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="index.html" class="act">Home</a></li>   
+                                    <li class="active"><a href="index.html" class="act">Trang chủ</a></li>   
                                     <!-- Mega Menu -->
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nữ<b class="caret"></b></a>
                                         <ul class="dropdown-menu multi-column columns-3">
                                             <div class="row">
                                                 <div class="col-sm-3  multi-gd-img">
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nam<b class="caret"></b></a>
                                         <ul class="dropdown-menu multi-column columns-3">
                                             <div class="row">
                                                 <div class="col-sm-3  multi-gd-img">
@@ -181,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </ul>
                                     </li>
                                     <li><a href="codes.html">Short Codes</a></li>
-                                    <li><a href="mail.html">Mail Us</a></li>
+                                    <li><a href="mail.html">Email</a></li>
                                 </ul>
                             </div>
                             </nav>
@@ -204,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <img src="images/bag.png" alt="" />
                                     </h3>
                                 </a>
-                                <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+                                <p><a href="javascript:;" class="simpleCart_empty">Giỏ hàng trống</a></p>
                                 <div class="clearfix"> </div>
                             </div>  
                         </div>
@@ -333,7 +333,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
                                         <span class="size">XL / XXL / S </span>
                                         <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
                                     </div>
                                 </div>
                             </div>
@@ -438,7 +438,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--Products-->
                 <div class="product-agile">
                     <div class="container">
-                        <h3 class="tittle1"> New Products</h3>
+                        <h3 class="tittle1"> Sản phẩm mới</h3>
                         <div class="slider">
                             <div class="callbacks_container">
                                 <ul class="rslides" id="slider">
@@ -678,7 +678,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--Products-->
             <div class="latest-w3">
                 <div class="container">
-                    <h3 class="tittle1">Latest Fashion Trends</h3>
+                    <h3 class="tittle1">Xu hướng thời trang</h3>
                     <div class="latest-grids">
                         <div class="col-md-4 latest-grid">
                             <div class="latest-top">
@@ -755,7 +755,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
                 <div class="new-arrivals-w3agile">
                     <div class="container">
-                        <h3 class="tittle1">Best Sellers</h3>
+                        <h3 class="tittle1">Bán chạy - HOT Sale</h3>
                         <div class="arrivals-grids">
                             <div class="col-md-3 arrival-grid simpleCart_shelfItem">
                                 <div class="grid-arr">
