@@ -1,47 +1,4 @@
 
-<?php
-include ('config.php');
-ob_start();
-if(isset($_SESSION['dangnhap']))
-{
-    //echo  'Xin chào '.$_SESSION['dangnhap'];
-    header ('location:index.php');
-}
-if (isset($_POST['dangnhap']))
-{
-    $taikhoan   = $_POST['taikhoan'];
-    $matkhau    = $_POST['matkhau'];
-    $sql="  SELECT * FROM user 
-            WHERE user_name = '$taikhoan' and password = '$matkhau'";
-    $run=mysqli_query($conn, $sql);
-    $dem=mysqli_num_rows($run);
-    if($dem == 0)
-    {
-            echo '<script>alert("Sai tài khoàn hoặc mật khẩu")</script>';
-    }else{
-        $_SESSION['dangnhap']=$taikhoan;
-        header ('location:index.php');
-    }
-}
-?>
-<p id="motasanpham">Đăng nhập thành viên    </p>
-            
-           <form action="" method="post" enctype="multipart/form-data">
-            <div class="row">
-                <div class="col-md-5">
-                <label>Tên đăng nhâp</label>
-                <input class="form-control" type="text" name="taikhoan" placeholder="Username..." required>
-                <label>Mật khẩu</label>
-                <input class="form-control" type="password" name="matkhau" placeholder="Password..." required>
-                <button class="btn btn-danger mt-2" type="submit" name="dangnhap">Đăng nhập</button>
-                </div>
-            </div>
-            </form>
-
-        <?php 
-        ob_end_flush();
-         ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -54,7 +11,7 @@ if (isset($_POST['dangnhap']))
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+<!--     <body class="bg-primary">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -100,8 +57,87 @@ if (isset($_POST['dangnhap']))
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-    </body>
+    </body> -->
 </html>
 
 
 
+<?php 
+    include ('config.php');
+    if (isset($_POST['dangky']))
+    {
+        $hoten = $_POST['hoten'];
+        $taikhoan = $_POST['taikhoan'];
+        $matkhau = $_POST['matkhau'];
+        
+        $sql="  INSERT INTO user (user_name, password, full_name)
+                VALUES ('$taikhoan', '$matkhau', '$hoten')";
+        $run=mysqli_query($conn, $sql);
+
+                echo '<script>alert("Bạn đã đăng ký tài khoản thành công, mời đăng nhập.")</script>';
+    }
+?>
+
+
+
+<!-- <script>
+    $(document).ready(function(){
+      $("#txtTaiKhoan").blur(function(){
+      var user = document.getElementById("txtTaiKhoan").value;
+      $.ajax({
+        url:"xuly_kiemtrataikhoan.php",
+        method:"POST",
+        data: {user:user},
+        success: function(kq){
+         if (kq ==1) {
+             $('#nhacloi').html ( 'Tài khoản đã có người sử dụng !!!');
+              $("#nhacloi").css("color", "red");
+         }else{
+            $('#nhacloi').html ( 'Tài khoản hợp lệ.');
+              $("#nhacloi").css("color", "green");
+        }
+        }
+      });
+      });
+    });
+</script> -->
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-5">
+            <label>Họ tên</label>
+            <input class="form-control" type="text" name="hoten" placeholder="Họ tên..." required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label class="mt-2">Tên tài khoản</label>
+            <input class="form-control" type="text" name="taikhoan" id="txtTaiKhoan" placeholder="Tên tài khoản..." required>
+            <div id="nhacloi"></div>
+        </div>
+        <div class="col-md-2">
+            <label class="mt-2">Mật khẩu</label>
+            <input class="form-control" type="password" name="matkhau" placeholder="Mật khẩu..." required>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <label class="mt-2">Email</label>
+            <input class="form-control" type="text" name="email" placeholder="BookStore@gmail.com" required>
+        </div>
+        <div class="col-md-2">
+            <label class="mt-2">Số điện thoại</label>
+                <input class="form-control" type="text" name="sodienthoai" placeholder="(+84)" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <label class="mt-2">Địa chỉ</label>
+            <input class="form-control" type="text" name="diachi" placeholder="Địa chỉ..." required>
+        </div>
+    </div>
+    <button class="btn btn-danger mt-2" type="submit" name="dangky" id="btnDangKy">Đăng ký</button>
+</form>
