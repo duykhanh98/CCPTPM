@@ -1,5 +1,6 @@
 <?php 
 ob_start();
+session_start();
  ?>
 <head>
 <title>Mua bán quần áo online</title>
@@ -70,13 +71,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                      <div class="top-left">
                         <a href="#">Hotline<i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +0123-456-789</a>
                     </div>
-                    <div class="top-right">
-                    <ul>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="login1.php">Đăng nhập</a></li>
-                        <li><a href="registered.php">Đăng ký</a></li>
-                    </ul>
-                    </div>
+<?php 
+	if (isset($_SESSION['dangnhap'])) {
+?>
+	    <div class="top-right">
+	        <ul>
+	            <li><a href="#">Xin chào: <?php echo $_SESSION['dangnhap'] ?></a></li>
+	            <li><p>|</p></li>
+	            <li><a href="logout.php">Đăng xuất</a></li>
+	        </ul>
+	    </div>
+<?php
+	}else{
+ ?>
+         <div class="top-right">
+            <ul>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="login1.php">Đăng nhập</a></li>
+                <li><a href="registered.php">Đăng ký</a></li>
+            </ul>
+        </div>
+<?php } ?>
+
+
+
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -206,4 +224,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
-        <!--header-->
+        <!--header-->}
+	}
