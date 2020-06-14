@@ -13,8 +13,8 @@ include ('config.php');
         $matkhau    = $_POST['matkhau'];
         $sql="  SELECT * FROM user 
                 WHERE user_name = '$taikhoan' and password = '$matkhau'";
-        $run=mysqli_query($conn, $sql);
-        $dem=mysqli_num_rows($run);
+        $run = mysqli_query($conn, $sql);
+        $dem = mysqli_num_rows($run);
         if($dem == 0)
         {
                 echo '<script>alert("Sai tài khoàn hoặc mật khẩu")</script>';
