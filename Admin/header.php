@@ -1,7 +1,17 @@
 <?php 
 ob_start();
 session_start();
+if (isset ($_GET['ac']) && $_GET['ac'] == 'dangxuat')
+{
+	session_destroy();
+	header('location:index.php');
+}
  ?>
+
+
+
+
+
 <head>
 <title>Mua bán quần áo online</title>
 
@@ -78,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        <ul>
 	            <li><a href="#">Xin chào: <?php echo $_SESSION['dangnhap'] ?></a></li>
 	            <li><p>|</p></li>
-	            <li><a href="logout.php">Đăng xuất</a></li>
+	            <li><a href="index.php?ac=dangxuat">Đăng xuất</a></li>
 	        </ul>
 	    </div>
 <?php
