@@ -1,14 +1,12 @@
 <?php 
-session_start();
-include("header.php");
 
+include("header.php");
 ?>
 <?php
 include ('config.php');
-    ob_start();
     if(isset($_SESSION['dangnhap']))
     {
-        //echo  'Xin chào '.$_SESSION['dangnhap'];
+//echo  'Xin chào '.$_SESSION['dangnhap'];
         header ('location:index.php');
     }
     if (isset($_POST['dangnhap']))
@@ -27,9 +25,8 @@ include ('config.php');
             header ('location:index.php');
         }
     }
-    ?>
+?>
 <div class="content">
-				<!--login-->
 			<div class="login">
 				<div class="main-agileits">
 					<div class="form-w3agile">
@@ -55,6 +52,5 @@ include ('config.php');
 					</div>
 				</div>
 			</div>
-				<!--login-->
-		</div>
+</div>
 <?php include("footer.php"); ?>

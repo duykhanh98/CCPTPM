@@ -1,12 +1,13 @@
-<!DOCTYPE HTML>
-<html>
+<?php 
+ob_start();
+ ?>
 <head>
 <title>Mua bán quần áo online</title>
-<!--css-->
+
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/font-awesome.css" rel="stylesheet">
-<!--css-->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
