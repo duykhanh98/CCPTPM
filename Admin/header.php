@@ -1,6 +1,9 @@
 <?php 
 ob_start();
  ?>
+
+ <!DOCTYPE html>
+ <html lang="en">
 <head>
 <title>Mua bán quần áo online</title>
 
@@ -73,8 +76,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="top-right">
                     <ul>
                         <li><a href="checkout.html">Checkout</a></li>
+                        <?php
+                            if(isset($_SESSION['dangnhap'])){
+                                $_SESSION['dangnhap'] = $taikhoan;
+                         ?>
+                         <?php
+                            }else{ 
+                          ?>
                         <li><a href="login1.php">Đăng nhập</a></li>
                         <li><a href="registered.php">Đăng ký</a></li>
+                        <?php
+                            }
+                         ?>
                     </ul>
                     </div>
                     <div class="clearfix"></div>

@@ -22,7 +22,7 @@ include ('config.php');
                 echo '<script>alert("Sai tài khoàn hoặc mật khẩu")</script>';
         }else{
             $_SESSION['dangnhap']=$taikhoan;
-            header ('location:index.php');
+            header ('Location:Index.php');
         }
     }
 ?>

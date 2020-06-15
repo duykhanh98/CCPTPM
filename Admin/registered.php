@@ -15,12 +15,9 @@
         	$sql = " INSERT INTO user (user_name, email, password, full_name)
                 VALUES ('$username', '$email', '$password','$full_name')";
         $run = mysqli_query($conn, $sql);
-        	// header("Location:Index.php");
-			echo '<script>alert("Bạn đã đăng ký tài khoản thành công, mời đăng nhập.")</script>';
-			
-
+        	echo '<script>alert("Bạn đã đăng ký tài khoản thành công, mời đăng nhập.")</script>';
+        	header("Location:login1.php");
         }
-        
     }
 ?>
 
