@@ -1,11 +1,28 @@
+<?php include("config.php"); ?>
 <?php
     $sql = "SELECT * FROM Product ORDER BY ID DESC limit 0,4";
     $run = mysqli_query($conn, $sql); 
 
     $sql_Nam = "SELECT * FROM Product WHERE ID_LOAI = 1 ORDER BY ID DESC LIMIT 0,4";
     $run_Nam = mysqli_query($conn, $sql_Nam);
- ?>
 
+    $sql_Nu = "SELECT * FROM Product WHERE ID_LOAI = 2 ORDER BY ID DESC LIMIT 0,4";
+    $run_Nu = mysqli_query($conn, $sql_Nu);
+
+ ?>
+<?php 
+    if (isset ($_GET['xem']))
+    {
+        $tam=$_GET['xem']   ;
+    }else
+    {
+        $tam='';
+    }
+    if($tam=='single')
+    {
+        include ('single.php');    
+    }     
+?>
 <!--content-->
         <div class="content">
             <!--banner-bottom-->
@@ -66,9 +83,10 @@
                                 <div class="grid-arr">
                                     <div  class="grid-arrival">
                                         <figure>        
-                                            <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+                                            <a href="index.php?xem=single&linkid=<?php echo $result['ID'] ?>" class="new-gri" data-toggle="modal" data-target="#myModal1">
                                                 <div class="grid-img">
                                                     <img  src="<?php echo $result['HinhAnh'] ?>" class="img-responsive" alt="">
+                                                    
                                                 </div>
                                                 <div class="grid-img">
                                                     <img  src="<?php echo $result['HinhAnh1'] ?>" class="img-responsive"  alt="">
@@ -86,7 +104,7 @@
                                         <div class="starbox small ghosting"> </div>
                                     </div>
                                     <div class="women">
-                                        <h6><a href="single.html"><?php echo $result['TenSP'] ?></a></h6>
+                                        <h6><a href="index.php?xem=single&linkid=<?php echo $result['ID'] ?>"><?php echo $result['TenSP'] ?></a></h6>
                                         <span class="size"><?php echo $result['Size'] ?></span>
                                         <p ><del><?php echo number_format($result['GiaCu']) ." " ."VNĐ" ?></del> <em class="item_price"><?php echo number_format($result['Gia']) ." " ."VNĐ" ?></em></p>
                                         <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
@@ -146,9 +164,61 @@
                                                         <div class="starbox small ghosting"> </div>
                                                     </div>
                                                     <div class="women">
-                                                        <h6><a href="single.html"><?php echo $result_Nam['TenSP'] ?></a></h6>
+                                                        <h6><a href="index.php?xem=single&linkid=<?php echo $result_Nam['ID'] ?>"><?php echo $result_Nam['TenSP'] ?></a></h6>
+
                                                         <span class="size"><?php echo $result_Nam['Size']?></span>
                                                         <p><del><?php echo number_format($result_Nam['GiaCu']) ." " ."VNĐ" ?> </del><em class="item_price"><?php echo number_format($result_Nam['Gia']) ." " ."VNĐ" ?></em></p>
+                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                                } 
+                                             ?>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-agile">
+                    <div class="container">
+                        <h3 class="tittle1">Trang phục nữ</h3>
+                        <div class="slider">
+                            <div class="callbacks_container">
+                                <ul class="rslides" id="slider">
+                                    
+                                    <li>     
+                                        <div class="caption">
+                                            <?php   
+                                            while ($result_Nu = mysqli_fetch_array($run_Nu))
+                                            {
+                                        ?>
+                                            <div class="col-md-3 cap-left simpleCart_shelfItem">
+                                                <div class="grid-arr">
+                                                    <div  class="grid-arrival">
+                                                        <figure>        
+                                                            <a href="single.html">
+                                                                <div class="grid-img">
+                                                                    <img  src="<?php echo $result_Nu['HinhAnh'] ?>" class="img-responsive" alt="">
+                                                                </div>
+                                                                <div class="grid-img">
+                                                                    <img  src="<?php echo $result_Nu['HinhAnh1'] ?>" class="img-responsive"  alt="">
+                                                                </div>          
+                                                            </a>        
+                                                        </figure>   
+                                                    </div>
+                                                    <div class="block">
+                                                        <div class="starbox small ghosting"> </div>
+                                                    </div>
+                                                    <div class="women">
+                                                        <h6><a href="index.php?xem=single&linkid=<?php echo $result_Nu['ID'] ?>"><?php echo $result_Nu['TenSP'] ?></a></h6>
+                                                        <span class="size"><?php echo $result_Nu['Size']?></span>
+                                                        <p><del><?php echo number_format($result_Nu['GiaCu']) ." " ."VNĐ" ?> </del><em class="item_price"><?php echo number_format($result_Nu['Gia']) ." " ."VNĐ" ?></em></p>
                                                         <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
                                                     </div>
                                                 </div>
