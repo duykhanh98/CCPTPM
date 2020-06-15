@@ -1,3 +1,11 @@
+<?php
+    $sql = "SELECT * FROM Product ORDER BY ID DESC limit 0,4";
+    $run = mysqli_query($conn, $sql); 
+
+    $sql_Nam = "SELECT * FROM Product WHERE ID_LOAI = 1 ORDER BY ID DESC LIMIT 0,4";
+    $run_Nam = mysqli_query($conn, $sql_Nam);
+ ?>
+
 <!--content-->
         <div class="content">
             <!--banner-bottom-->
@@ -48,18 +56,22 @@
             <!--new-arrivals-->
                 <div class="new-arrivals-w3agile">
                     <div class="container">
-                        <h2 class="tittle">New Arrivals</h2>
+                        <h2 class="tittle">Sản phẩm mới</h2>
                         <div class="arrivals-grids">
+                            <?php   
+                        while ($result = mysqli_fetch_array($run))
+                                {
+                                ?>
                             <div class="col-md-3 arrival-grid simpleCart_shelfItem">
                                 <div class="grid-arr">
                                     <div  class="grid-arrival">
                                         <figure>        
                                             <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
                                                 <div class="grid-img">
-                                                    <img  src="images/p6.jpg" class="img-responsive" alt="">
+                                                    <img  src="<?php echo $result['HinhAnh'] ?>" class="img-responsive" alt="">
                                                 </div>
                                                 <div class="grid-img">
-                                                    <img  src="images/p5.jpg" class="img-responsive"  alt="">
+                                                    <img  src="<?php echo $result['HinhAnh1'] ?>" class="img-responsive"  alt="">
                                                 </div>          
                                             </a>        
                                         </figure>   
@@ -74,94 +86,17 @@
                                         <div class="starbox small ghosting"> </div>
                                     </div>
                                     <div class="women">
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <span class="size">XL / XXL / S </span>
-                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+                                        <h6><a href="single.html"><?php echo $result['TenSP'] ?></a></h6>
+                                        <span class="size"><?php echo $result['Size'] ?></span>
+                                        <p ><del><?php echo number_format($result['GiaCu']) ." " ."VNĐ" ?></del> <em class="item_price"><?php echo number_format($result['Gia']) ." " ."VNĐ" ?></em></p>
                                         <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                                <div class="grid-arr">
-                                    <div  class="grid-arrival">
-                                        <figure>        
-                                            <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal2">
-                                                <div class="grid-img">
-                                                    <img  src="images/p7.jpg" class="img-responsive" alt="">
-                                                </div>
-                                                <div class="grid-img">
-                                                    <img  src="images/p8.jpg" class="img-responsive"  alt="">
-                                                </div>          
-                                            </a>        
-                                        </figure>   
-                                    </div>
-                                    <div class="ribben2">
-                                        <p>OUT OF STOCK</p>
-                                    </div>
-                                    <div class="block">
-                                        <div class="starbox small ghosting"> </div>
-                                    </div>
-                                    <div class="women">
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <span class="size">XL / XXL / S </span>
-                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class=" my-cart-b item_add">Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                                <div class="grid-arr">
-                                    <div  class="grid-arrival">
-                                        <figure>        
-                                            <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal3">
-                                                <div class="grid-img">
-                                                    <img  src="images/p10.jpg" class="img-responsive" alt="">
-                                                </div>
-                                                <div class="grid-img">
-                                                    <img  src="images/p9.jpg" class="img-responsive"  alt="">
-                                                </div>          
-                                            </a>        
-                                        </figure>   
-                                    </div>
-                                    <div class="ribben1">
-                                        <p>SALE</p>
-                                    </div>
-                                    <div class="block">
-                                        <div class="starbox small ghosting"> </div>
-                                    </div>
-                                    <div class="women">
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <span class="size">XL / XXL / S </span>
-                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                                <div class="grid-arr">
-                                    <div  class="grid-arrival">
-                                        <figure>        
-                                            <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal4">
-                                                <div class="grid-img">
-                                                    <img  src="images/p11.jpg" class="img-responsive" alt="">
-                                                </div>
-                                                <div class="grid-img">
-                                                    <img  src="images/p12.jpg" class="img-responsive"  alt="">
-                                                </div>          
-                                            </a>        
-                                        </figure>   
-                                    </div>
-                                    <div class="block">
-                                        <div class="starbox small ghosting"> </div>
-                                    </div>
-                                    <div class="women">
-                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                        <span class="size">XL / XXL / S </span>
-                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php 
+                                    }
+                                ?>
+                            
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -182,22 +117,27 @@
             <!--Products-->
                 <div class="product-agile">
                     <div class="container">
-                        <h3 class="tittle1"> Sản phẩm mới</h3>
+                        <h3 class="tittle1">Trang phục nam</h3>
                         <div class="slider">
                             <div class="callbacks_container">
                                 <ul class="rslides" id="slider">
+                                    
                                     <li>     
                                         <div class="caption">
+                                            <?php   
+                                            while ($result_Nam = mysqli_fetch_array($run_Nam))
+                                            {
+                                        ?>
                                             <div class="col-md-3 cap-left simpleCart_shelfItem">
                                                 <div class="grid-arr">
                                                     <div  class="grid-arrival">
                                                         <figure>        
                                                             <a href="single.html">
                                                                 <div class="grid-img">
-                                                                    <img  src="images/p14.jpg" class="img-responsive" alt="">
+                                                                    <img  src="<?php echo $result_Nam['HinhAnh'] ?>" class="img-responsive" alt="">
                                                                 </div>
                                                                 <div class="grid-img">
-                                                                    <img  src="images/p13.jpg" class="img-responsive"  alt="">
+                                                                    <img  src="<?php echo $result_Nam['HinhAnh1'] ?>" class="img-responsive"  alt="">
                                                                 </div>          
                                                             </a>        
                                                         </figure>   
@@ -206,214 +146,20 @@
                                                         <div class="starbox small ghosting"> </div>
                                                     </div>
                                                     <div class="women">
-                                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                                        <span class="size">XL / XXL / S </span>
-                                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                                        <h6><a href="single.html"><?php echo $result_Nam['TenSP'] ?></a></h6>
+                                                        <span class="size"><?php echo $result_Nam['Size']?></span>
+                                                        <p><del><?php echo number_format($result_Nam['GiaCu']) ." " ."VNĐ" ?> </del><em class="item_price"><?php echo number_format($result_Nam['Gia']) ." " ."VNĐ" ?></em></p>
+                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3 cap-left simpleCart_shelfItem">
-                                                <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure>        
-                                                            <a href="single.html">
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p15.jpg" class="img-responsive" alt="">
-                                                                </div>
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p16.jpg" class="img-responsive"  alt="">
-                                                                </div>          
-                                                            </a>        
-                                                        </figure>   
-                                                    </div>
-                                                    <div class="ribben">
-                                                        <p>NEW</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <div class="starbox small ghosting"> </div>
-                                                    </div>
-                                                    <div class="women">
-                                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                                        <span class="size">XL / XXL / S </span>
-                                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 cap-left simpleCart_shelfItem">
-                                                <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure>        
-                                                            <a href="single.html">
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p18.jpg" class="img-responsive" alt="">
-                                                                </div>
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p17.jpg" class="img-responsive"  alt="">
-                                                                </div>          
-                                                            </a>        
-                                                        </figure>   
-                                                    </div>
-                                                    <div class="ribben1">
-                                                        <p>SALE</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <div class="starbox small ghosting"> </div>
-                                                    </div>
-                                                    <div class="women">
-                                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                                        <span class="size">XL / XXL / S </span>
-                                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 cap-left simpleCart_shelfItem">
-                                                <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure>        
-                                                            <a href="single.html">
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p20.jpg" class="img-responsive" alt="">
-                                                                </div>
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p19.jpg" class="img-responsive"  alt="">
-                                                                </div>          
-                                                            </a>        
-                                                        </figure>   
-                                                    </div>
-                                                    <div class="ribben">
-                                                        <p>-20%</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <div class="starbox small ghosting"> </div>
-                                                    </div>
-                                                    <div class="women">
-                                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                                        <span class="size">XL / XXL / S </span>
-                                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php
+                                                } 
+                                             ?>
                                             <div class="clearfix"></div>
                                         </div>
                                     </li>
-                                    <li>     
-                                        <div class="caption">
-                                            <div class="col-md-3 cap-left simpleCart_shelfItem">
-                                                <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure>        
-                                                            <a href="single.html">
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p21.jpg" class="img-responsive" alt="">
-                                                                </div>
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p22.jpg" class="img-responsive"  alt="">
-                                                                </div>          
-                                                            </a>        
-                                                        </figure>   
-                                                    </div>
-                                                    <div class="block">
-                                                        <div class="starbox small ghosting"> </div>
-                                                    </div>
-                                                    <div class="women">
-                                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                                        <span class="size">XL / XXL / S </span>
-                                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 cap-left simpleCart_shelfItem">
-                                                <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure>        
-                                                            <a href="single.html">
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p24.jpg" class="img-responsive" alt="">
-                                                                </div>
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p23.jpg" class="img-responsive"  alt="">
-                                                                </div>          
-                                                            </a>        
-                                                        </figure>   
-                                                    </div>
-                                                    <div class="ribben">
-                                                        <p>NEW</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <div class="starbox small ghosting"> </div>
-                                                    </div>
-                                                    <div class="women">
-                                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                                        <span class="size">XL / XXL / S </span>
-                                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 cap-left simpleCart_shelfItem">
-                                                <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure>        
-                                                            <a href="single.html">
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p26.jpg" class="img-responsive" alt="">
-                                                                </div>
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p25.jpg" class="img-responsive"  alt="">
-                                                                </div>          
-                                                            </a>        
-                                                        </figure>   
-                                                    </div>
-                                                    <div class="ribben">
-                                                        <p>-75%</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <div class="starbox small ghosting"> </div>
-                                                    </div>
-                                                    <div class="women">
-                                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                                        <span class="size">XL / XXL / S </span>
-                                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 cap-left simpleCart_shelfItem">
-                                                <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure>        
-                                                            <a href="single.html">
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p10.jpg" class="img-responsive" alt="">
-                                                                </div>
-                                                                <div class="grid-img">
-                                                                    <img  src="images/p9.jpg" class="img-responsive"  alt="">
-                                                                </div>          
-                                                            </a>        
-                                                        </figure>   
-                                                    </div>
-                                                    <div class="ribben">
-                                                        <p>NEW</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <div class="starbox small ghosting"> </div>
-                                                    </div>
-                                                    <div class="women">
-                                                        <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                                        <span class="size">XL / XXL / S </span>
-                                                        <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>

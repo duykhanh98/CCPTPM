@@ -8,6 +8,7 @@
 ?>
     <?php
         include("header.php"); 
+        include("config.php");
      ?>
         <!--banner-->
         <div class="banner-w3">
