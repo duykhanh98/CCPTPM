@@ -1,4 +1,5 @@
 <?php 
+<<<<<<< HEAD
 ob_start();
 session_start();
 if (isset ($_GET['ac']) && $_GET['ac'] == 'dangxuat')
@@ -12,6 +13,20 @@ if (isset ($_GET['ac']) && $_GET['ac'] == 'dangxuat')
 
 
 
+=======
+    ob_start();
+    session_start();
+    if (isset ($_GET['ac']) && $_GET['ac'] == 'dangxuat')
+    {
+        session_destroy();
+        header('location:index.php');
+    }
+ ?>
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+>>>>>>> master
 <head>
 <title>Mua bán quần áo online</title>
 
@@ -81,6 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                      <div class="top-left">
                         <a href="#">Hotline<i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +0123-456-789</a>
                     </div>
+<<<<<<< HEAD
 <?php 
 	if (isset($_SESSION['dangnhap'])) {
 ?>
@@ -105,6 +121,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
+=======
+                    <div class="top-right">
+                    <ul>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <?php
+                            if(isset($_SESSION['dangnhap'])){
+                         ?>
+                             <li><a href="#">HI ! : <?php echo $_SESSION['dangnhap'] ?></a></li> /
+                             <li><a href="index.php?ac=dangxuat">Đăng xuất</a></li>
+                         <?php
+                            }else{ 
+                          ?>
+                        <li><a href="login1.php">Đăng nhập</a></li>
+                        <li><a href="registered.php">Đăng ký</a></li>
+                        <?php
+                            }
+                         ?>
+                    </ul>
+                    </div>
+>>>>>>> master
                     <div class="clearfix"></div>
                 </div>
             </div>

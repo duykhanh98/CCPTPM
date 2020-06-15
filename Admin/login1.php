@@ -12,7 +12,7 @@ include ('config.php');
     if (isset($_POST['dangnhap']))
     {
         $taikhoan   = $_POST['taikhoan'];
-        $matkhau    = $_POST['matkhau'];
+        $matkhau    = md5($_POST['matkhau']);
         $sql="  SELECT * FROM user 
                 WHERE user_name = '$taikhoan' and password = '$matkhau'";
         $run = mysqli_query($conn, $sql);
@@ -22,7 +22,7 @@ include ('config.php');
                 echo '<script>alert("Sai tài khoàn hoặc mật khẩu")</script>';
         }else{
             $_SESSION['dangnhap']=$taikhoan;
-            header ('location:index.php');
+            header ('Location:Index.php');
         }
     }
 ?>
