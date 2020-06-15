@@ -1,6 +1,13 @@
 <?php 
-ob_start();
+    ob_start();
+    session_start();
+    if (isset ($_GET['ac']) && $_GET['ac'] == 'dangxuat')
+    {
+        session_destroy();
+        header('location:index.php');
+    }
  ?>
+
 
  <!DOCTYPE html>
  <html lang="en">
@@ -78,8 +85,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="checkout.html">Checkout</a></li>
                         <?php
                             if(isset($_SESSION['dangnhap'])){
-                                $_SESSION['dangnhap'] = $taikhoan;
                          ?>
+                             <li><a href="#">HI ! : <?php echo $_SESSION['dangnhap'] ?></a></li> /
+                             <li><a href="index.php?ac=dangxuat">Đăng xuất</a></li>
                          <?php
                             }else{ 
                           ?>
