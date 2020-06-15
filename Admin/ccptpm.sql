@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 15, 2020 lúc 05:06 AM
+-- Thời gian đã tạo: Th6 15, 2020 lúc 08:09 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.5
 
@@ -45,7 +45,16 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`ID`, `TenSP`, `Gia`, `GiaCu`, `XuatXu`, `HinhAnh`, `HinhAnh1`, `MoTa`, `Size`, `ID_LOAI`) VALUES
-(1, 'Sơ mi trắng quần tây', '200000', '220000', '', 'https://4men.com.vn/images/thumbs/2017/10/trang-phuc-don-xuan-cho-cac-chang-thanh-lich-news-280.jpg', 'https://karan.vn/file/images/959-tn01-0.jpg', 'Thích hợp cho môi trường công sở, đón xuân,...', 'S / M / L', 1);
+(1, 'Sơ mi trắng quần tây', '200000', '220000', '', 'https://cdn3.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/8e8754ef-7b20-2400-4d35-0015906167b9.jpg?w=440', 'https://cdn3.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/ae1e725a-84d3-2900-f078-00159062165a.jpg?w=440', 'Thích hợp cho môi trường công sở, đón xuân,...', 'S / M / L', 1),
+(2, 'Du lịch', '190000', '250000', 'Hồ Chí Minh, Việt Nam', 'https://cdn3.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/8e8754ef-7b20-2400-4d35-0015906167b9.jpg?w=440', 'https://anh.eva.vn//upload/2-2016/images/2016-04-22/chuan-bi-trang-phuc-cho-chang-di-du-lich-me2-1461327271-width500height750.jpg', 'Thoải mái cho các chuyến đi du lịch vào dịp cuối tuấn, dã ngoại,..', 'S / M / L / XXL', 1),
+(5, 'SHEIN Áo sơ mi Xù Hoa', '141000', '150000', 'Đồng Nai, VN', 'https://img.ltwebstatic.com/images3_pi/2020/05/26/159048060088d94d388188ae1bec64db29312d8b80_thumbnail_405x552.webp', 'https://img.ltwebstatic.com/images3_pi/2020/06/02/15910637615d6437e7992113c5cff52ce33b5480c4_thumbnail_405x552.webp', 'Phong cách:	Boho\r\nMàu sắc:	Nhiều màu\r\nKiểu mẫu:	Hoa, Tất cả trên in\r\nViền :	Vai lạnh, áo hai dây\r\nChiều dài:	Thường xuyên\r\nKiểu:	Ngọn\r\nChi tiết:	Xù, Vai lạnh\r\nChiều dài tay:	Ngắn tay\r\nMùa:	Mùa Hè\r\nThành phần:	100% Polyester\r\nVật liệu:	Polyester\r\nSợi vải:	Không căng\r\nMỏng:	Không\r\nLoại Phù hợp:	Phù hợp thường\r\nLoại túi váy:	Áo chui', 'S / M / L / XL', 2),
+(6, 'SHEIN Leggings Sọc Xám Thể thao', '141000', '150000', 'Đồng Nai, VN', 'https://img.ltwebstatic.com/images3_pi/2019/11/02/1572674602573925b6ab6eaadd36eaa7a84601a31a_thumbnail_405x552.webp', 'https://img.ltwebstatic.com/images3_pi/2019/11/02/1572674602573925b6ab6eaadd36eaa7a84601a31a_thumbnail_405x552.webp', 'Phong cách:	Boho\r\nMàu sắc:	Nhiều màu\r\nKiểu mẫu:	Hoa, Tất cả trên in\r\nViền :	Vai lạnh, áo hai dây\r\nChiều dài:	Thường xuyên\r\nKiểu:	Ngọn\r\nChi tiết:	Xù, Vai lạnh\r\nChiều dài tay:	Ngắn tay\r\nMùa:	Mùa Hè\r\nThành phần:	100% Polyester\r\nVật liệu:	Polyester\r\nSợi vải:	Không căng\r\nMỏng:	Không\r\nLoại Phù hợp:	Phù hợp thường\r\nLoại túi váy:	Áo chui', 'S / M / L / XL', 2),
+(7, 'Váy Houndstooth màu đen', '141000', '150000', 'Đồng Nai, VN', 'https://img.ltwebstatic.com/images3_pi/2019/10/25/1571990099229c23369431555f0f0e52f5dc411143_thumbnail_405x552.webp', 'https://img.ltwebstatic.com/images3_pi/2019/10/25/1571990091f3924196981f9b0c5f0af7f67c271d5c_thumbnail_405x552.webp', 'Phong cách:	Boho\r\nMàu sắc:	Nhiều màu\r\nKiểu mẫu:	Hoa, Tất cả trên in\r\nViền :	Vai lạnh, áo hai dây\r\nChiều dài:	Thường xuyên\r\nKiểu:	Ngọn\r\nChi tiết:	Xù, Vai lạnh\r\nChiều dài tay:	Ngắn tay\r\nMùa:	Mùa Hè\r\nThành phần:	100% Polyester\r\nVật liệu:	Polyester\r\nSợi vải:	Không căng\r\nMỏng:	Không\r\nLoại Phù hợp:	Phù hợp thường\r\nLoại túi váy:	Áo chui', 'S / M / L / XL', 2),
+(8, 'SHEIN Áo thun Khối Màu', '16200', '180000', 'Đồng Nai, VN', 'https://img.ltwebstatic.com/images3_pi/2020/05/05/15886412981e09a12fe2412acc42a0c1d87f20eb9e_thumbnail_405x552.webp', 'https://img.ltwebstatic.com/images3_pi/2020/05/05/15886413021ca363f1f5ffdbf2eaf013fbde531c81_thumbnail_405x552.webp', 'Phong cách:	Boho\r\nMàu sắc:	Nhiều màu\r\nKiểu mẫu:	Hoa, Tất cả trên in\r\nViền :	Vai lạnh, áo hai dây\r\nChiều dài:	Thường xuyên\r\nKiểu:	Ngọn\r\nChi tiết:	Xù, Vai lạnh\r\nChiều dài tay:	Ngắn tay\r\nMùa:	Mùa Hè\r\nThành phần:	100% Polyester\r\nVật liệu:	Polyester\r\nSợi vải:	Không căng\r\nMỏng:	Không\r\nLoại Phù hợp:	Phù hợp thường\r\nLoại túi váy:	Áo chui', 'S / M / L / XL', 2),
+(9, 'SHEIN Áo sơ mi Xù Hoa', '141000', '150000', 'Đồng Nai, VN', 'https://img.ltwebstatic.com/images3_pi/2020/05/26/159048060088d94d388188ae1bec64db29312d8b80_thumbnail_405x552.webp', 'https://img.ltwebstatic.com/images3_pi/2020/06/02/15910637615d6437e7992113c5cff52ce33b5480c4_thumbnail_405x552.webp', 'Phong cách:	Boho\r\nMàu sắc:	Nhiều màu\r\nKiểu mẫu:	Hoa, Tất cả trên in\r\nViền :	Vai lạnh, áo hai dây\r\nChiều dài:	Thường xuyên\r\nKiểu:	Ngọn\r\nChi tiết:	Xù, Vai lạnh\r\nChiều dài tay:	Ngắn tay\r\nMùa:	Mùa Hè\r\nThành phần:	100% Polyester\r\nVật liệu:	Polyester\r\nSợi vải:	Không căng\r\nMỏng:	Không\r\nLoại Phù hợp:	Phù hợp thường\r\nLoại túi váy:	Áo chui', 'S / M / L / XL', 2),
+(10, 'Áo thun Lá thư trắng', '164000', '185000', 'Vĩnh Long, VN', 'https://img.ltwebstatic.com/images3_pi/2020/04/20/15873492060d912cb241951482729bc743b146e4a6_thumbnail_405x552.webp', 'https://img.ltwebstatic.com/images3_pi/2020/04/20/158734921058c14b70b9c218f943ee5095d8a0f750_thumbnail_405x552.webp', 'Phong cách:	Boho\r\nMàu sắc:	Nhiều màu\r\nKiểu mẫu:	Hoa, Tất cả trên in\r\nViền :	Vai lạnh, áo hai dây\r\nChiều dài:	Thường xuyên\r\nKiểu:	Ngọn\r\nChi tiết:	Xù, Vai lạnh\r\nChiều dài tay:	Ngắn tay\r\nMùa:	Mùa Hè\r\nThành phần:	100% Polyester\r\nVật liệu:	Polyester\r\nSợi vải:	Không căng\r\nMỏng:	Không\r\nLoại Phù hợp:	Phù hợp thường\r\nLoại túi váy:	Áo chui', 'S / M / L / XL', 2),
+(11, 'Áo Thun Nam Y2010', '135000', '225000', 'Việt Nam', 'https://cdn3.yame.vn/pimg/ao-thun-nam-y2010-co-tru-c01-0019042/7073abc8-6f2b-cc00-c392-00164ac307f7.jpg?w=440', 'https://cdn2.yame.vn/pimg/ao-thun-nam-y2010-co-tru-c01-0019042/8b346e88-2040-be00-d0de-00164ac28415.jpg?w=440', 'Thích hợp cho môi trường công sở, đón xuân,...', 'M / L /XL', 1),
+(12, 'Sơ mi trắng quần tây', '200000', '220000', '', 'https://cdn3.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/8e8754ef-7b20-2400-4d35-0015906167b9.jpg?w=440', 'https://cdn3.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/ae1e725a-84d3-2900-f078-00159062165a.jpg?w=440', 'Thích hợp cho môi trường công sở, đón xuân,...', 'S / M / L', 1);
 
 -- --------------------------------------------------------
 
@@ -63,7 +72,8 @@ CREATE TABLE `productcategory` (
 --
 
 INSERT INTO `productcategory` (`ID`, `TenLoai`) VALUES
-(1, 'Trang phục nam');
+(1, 'Trang phục nam'),
+(2, 'Trang phục nữ');
 
 -- --------------------------------------------------------
 
@@ -129,13 +139,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `productcategory`
 --
 ALTER TABLE `productcategory`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
